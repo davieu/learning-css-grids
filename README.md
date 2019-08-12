@@ -1,4 +1,6 @@
 learning about CSS GRID
+to look at just open up the folder and put in copy paste the html path into the browser
+
 // hoow many you want in the column/how wide column is
 grid-template-columns:
 // how tall the row is
@@ -20,3 +22,15 @@ grid-row-gap: 20px
 grid-gap:
 // auto lengthens the row
 grid-auto-rows: 150px;
+
+span for two lines
+.item-5 {
+  grid-column: span 2;
+}
+
+produces same result as the above with the right config
+.item-5 {
+  /* grid-column: span 2; */
+  grid-column-start: 2;
+  grid-column-end: 4;
+}

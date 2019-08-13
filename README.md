@@ -1,6 +1,8 @@
 learning about CSS GRID
 to look at just open up the folder and put in copy paste the html path into the browser
 
+//mobile-first-grid-site  ----- A simple site that uses mobile first practices and css grid. Mobile layout completed first.
+
 // hoow many you want in the column/how wide column is
 grid-template-columns:
 // how tall the row is

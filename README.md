@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=M3qBpPw77qo
+
 learning about CSS GRID
 to look at just open up the folder and put in copy paste the html path into the browser
 

@@ -44,19 +44,33 @@
 /* WITH GRID TEMPLATE AREAS */
 main {
   height: 100vh;
-  text-align: center;
+  /* text-align: center; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas: 
-  "box1 box1 box3"
+    "box1 box2"
+    "box3 box3";
+  /* "box1 box1 box3"
   ". box2 box3"
-  ". box2 .";
-  justify-items: end;
+  ". box2 ."; */
+  /* justify-items: center; */
+  /* justify-items: end; */
+  /* justify-items: start; */
+  /* justify-items: stretch; */
+  /* align-items: start; */
+  /* align-items: center; */
+  /* align-items: end; */
 }
 
 .box1 {
   grid-area: box1;
+  /* text-align: center; */
+  /* justify-self: center; */
+  /* align-self: center; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .box2 {

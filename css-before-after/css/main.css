@@ -89,4 +89,54 @@ a[data-tool-tip]:hover::after {
           transform: scale(1);
   bottom: 100%;
 }
+
+.decorations {
+  padding: 3em;
+}
+
+.section-with-deco::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '/f0e7';
+  display: block;
+}
+
+.counters {
+  background: lightgray;
+  padding: 5em 8em;
+  counter-reset: counter-name;
+}
+
+.counters p {
+  padding-top: 1.5em;
+}
+
+.section {
+  position: relative;
+}
+
+.section::before {
+  counter-increment: counter-name;
+  content: counter(counter-name);
+  position: absolute;
+  left: -2.5em;
+  top: -.4em;
+  background: white;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 3px solid lightcoral;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: lightcoral;
+}
 /*# sourceMappingURL=main.css.map */

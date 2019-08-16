@@ -59,7 +59,7 @@ body {
   // align-content: center;
 }
 
-// BLOCK QUOTE
+// SECOND BLOCK QUOTE
 blockquote::before {
   content: open-quote;
   color: red;
@@ -73,7 +73,7 @@ blockquote::after {
 }
 
 
-// DATA TOOL TIP
+// THIRD DATA TOOL TIP
 a[data-tool-tip] {
   position: relative;
 }
@@ -99,4 +99,53 @@ a[data-tool-tip]::after {
 a[data-tool-tip]:hover::after {
   transform: scale(1);
   bottom: 100%;
+}
+
+// FOURTH
+.decorations {
+  padding: 3em;
+}
+
+.section-with-deco::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '/f0e7';
+  // content: url(//unsplash.it/400/10);
+  display: block;
+}
+
+// FIVE
+.counters {
+  background: lightgray;
+  // text-align: center;
+  padding: 5em 8em;
+  // for reseting the count. counter-name is arbitrary. look for this name to count.
+  counter-reset: counter-name;
+
+    p {
+      padding-top: 1.5em;
+    }
+}
+
+.section {
+  position: relative;
+}
+
+.section::before {
+  //every time it hits a .section it increments
+  counter-increment: counter-name;
+  content: counter(counter-name);
+  position: absolute;
+  left: -2.5em;
+  top: -.4em;
+  background: white;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid lightcoral;
+  box-sizing: border-box;
+  color:lightcoral; 
 }

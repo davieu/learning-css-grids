@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  height: 100vh;
+  border: 20px solid rgb(0,0,0);
+  display: flex;
+  // flex-direction: column, row, row-reverse, column-reverse
+  //default direction will be row/horizontally
+  // flex-direction: row;
+
+  // justify-content: start, center, flex-end, space-evenly, space-around, space-between;
+  // justify-content: flex-start;
+
+  // align-items:flex-start, center, flex-end, stretch, baseline;
+  //to use stretch there muse not be a defined height or width. stretch to size of parent.
+  // baseline will align text with other text
+  // align-items: baseline;
+
+  //flex-wrap: wrap needs to be 'wrap' for the align content to wrap and work correctly
+  flex-wrap: wrap;
+
+  // align-content: flex-start, center, flex-end, space-around, space-between, space-evenly;
+  align-content: flex-start;
+
+  // just a faster way to use flex-direction and wrap
+  // flex-flow: column wrap;
+
+  .child1 {
+    // width not needed anymore since the basis of 300px was added to the flex
+    // width: 200px;
+    height: 200px;
+    background: rgb(39, 61, 134);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // flex-shrink: 1;
+    flex: 1 1 300px;
+    // flex-grow: 1;
+    // order: 0;
+
+      .info {
+        background: rgb(104, 98, 98);
+        text-align: center;
+
+        p {
+          background: red;
+          color: rgb(172, 57, 53);
+        }
+      }
+  }
+
+  .child2 {
+    // width: 200px;
+    height: 200px;
+    background: rgb(172, 57, 53);
+    flex: 1 1 300px;
+    // flex-grow: 1;
+    // order: 3;
+    align-self: flex-end;
+  }
+
+  .child3 {
+    // width: 200px;
+    height: 200px;
+    background: rgb(149, 43, 140);
+    flex: 1 1 300px;
+    // flex-grow: 1;
+    // order: 2;
+  }
+
+  .child4 {
+    // width: 200px;
+    height: 200px;
+    background: rgb(14, 195, 165);
+    flex: 1 1 300px;
+    // flex-grow: 1;
+    // order: -1;
+  }
+}

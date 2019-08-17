@@ -1,5 +1,7 @@
 https://www.youtube.com/watch?v=M3qBpPw77qo
 
+This is my frontend git repo. It is me just practicing with design and figuring out cool implementations of anything that I want to lean.
+
 learning about CSS GRID
 to look at just open up the folder and put in copy paste the html path into the browser
 

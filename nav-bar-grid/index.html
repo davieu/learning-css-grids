@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-
-
   <link rel="stylesheet" href="css/main.css">
   <script src="https://kit.fontawesome.com/104e14530f.js"></script>
 </head>
@@ -16,16 +14,10 @@
     <!-- Nav Start -->
     <nav>
       <div class="logo">
-          <h1>LoadGistics</h1>
+        <h1>LoadGistics</h1>
       </div>
-      <!-- <ul class="links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Work</a></li>
-        <li><a href="#">Projects</a></li>
-      </ul> -->
-      <!-- </div> -->
 
+      <div class="nav-divider"></div>
       <div class="burger">
         <div class="burger-lines">
           <div class="line1 lines"></div>
@@ -33,23 +25,32 @@
           <div class="line3 lines"></div>
         </div>
       </div>
-
     </nav>
 
-    <div class="side-bar"></div>
+    <!-- This will only show when burger menu activated -->
+    <div class="side-bar">
+      <div class="links-wrapper">
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Projects</a></li>
+          </ul>
+      </div>
+    </div>
 
     <header id="showcase">
       <div class="showcase-background-image"></div>
       <!-- These fill the sides for the showcase content -->
       <div class="fill-sides-content-right"></div>
       <div class="fill-sides-content-left"></div>
-      <div class="containnn">
-
-          <div class="showcase-content">
-            <h1><i class="fas fa-long-arrow-alt-left"></i> Coast to Coast <i class="fas fa-long-arrow-alt-right"></i></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum delectus amet hic at deserunt enim esse velit eaque veniam magni.</p>
-          </div>
-
+      <!-- divider between nav and header/showcase -->
+      <div class="nav-showcase-divider"></div>
+      <div class="container-showcase-content">
+        <div class="showcase-content">
+          <h1><i class="fas fa-long-arrow-alt-left"></i> Coast to Coast <i class="fas fa-long-arrow-alt-right"></i></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum delectus amet hic at deserunt enim esse velit eaque veniam magni.</p>
+        </div>
       </div>
     </header>
 

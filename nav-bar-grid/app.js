@@ -14,6 +14,13 @@ const navSlide = () => {
     sideBar.classList.toggle('side-bar-active')
     // Toggle Nav
     // linksWrapper.classList.toggle('nav-active');
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = `navLinkFade 0.4s ease forwards ${index /7 + .2}s`
+      }
+    });
 
     // Animate Links
     // navLinks.forEach((link, index) => {

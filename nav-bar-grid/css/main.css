@@ -256,7 +256,7 @@ nav {
 }
 
 main {
-  margin-top: 1.5rem;
+  margin-top: .5rem;
   line-height: 1.5;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -266,9 +266,9 @@ main {
   display: grid;
   -ms-grid-columns: 1fr (minmax(auto, 25em))[2] 1fr;
       grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
-      grid-template-areas: ". sect-a sect-a ." "sect-b sect-b sect-b sect-b";
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+      grid-template-areas: ".      sect-a sect-a ." "sect-b sect-b sect-b sect-b";
   text-align: center;
   background: var(--main-app-color);
 }
@@ -297,6 +297,11 @@ main #section-b {
 main #section-b ul {
   list-style: none;
   margin-top: 1.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr (minmax(auto, 25em))[2] 1fr;
+      grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+      grid-template-areas: "card1 card1 card1" "card2 card2 card2" "card3 card3 card3";
 }
 
 main #section-b ul li {
@@ -327,6 +332,51 @@ main #section-b ul li .card-content p {
 main #section-b ul li img {
   width: 100%;
   border-radius: 15px 15px 0 0;
+}
+
+main #section-b ul li:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: card1;
+}
+
+main #section-b ul li:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: card2;
+}
+
+main #section-b ul li:nth-child(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: card3;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  main #section-b ul {
+        grid-template-areas: "card1 card1 card2 card2" "card3 card3 card3 card3";
+  }
+  main #section-b ul li:nth-child(3) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: card3;
+  }
+  main #section-b ul li:nth-child(3) img {
+    height: 20rem;
+    border-radius: 15px 15px 0 0;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  main #section-b ul {
+    -ms-grid-columns: 1fr (minmax(auto, 25em))[3] 1fr;
+        grid-template-columns: 1fr repeat(3, minmax(auto, 25em)) 1fr;
+        grid-template-areas: ". card1 card2 card3 .";
+  }
 }
 
 .links-wrapper {

@@ -6,9 +6,9 @@
 
 // CUSTUM VARIABLES
 :root {
-  --main-app-color: rgb(82, 94, 122);
-  --sidebar-color: rgba(82, 94, 122, .9);
-  --header-color: rgba(82, 94, 122, .8);
+  --main-app-color: rgb(39, 61, 134);
+  --sidebar-color: rgba(39, 61, 134, .9);
+  --header-color: rgba(39, 61, 134, .8);
   --dividers: rgb(17, 43, 68);
 }
 
@@ -19,7 +19,7 @@
   display: grid;
   height: 100vh;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 3rem 1fr 1fr;
+  grid-auto-rows: 3rem 1fr auto;
   grid-template-areas: 
     "nav-bar     nav-bar     nav-bar     nav-bar"
     "header-area header-area header-area header-area"
@@ -29,17 +29,13 @@
 nav {
   grid-area: nav-bar;
   letter-spacing: 3px;
-  // background: white;
   display: grid;
-  // The .2rem is the divider for the burger and logo
-  grid-template-columns: 1fr .2rem 3em;
-  grid-template-areas: "logo . burger";
-  // color: white;
+  grid-template-columns: 1fr 3em;
+  grid-template-areas: "logo burger";
   width: 100%;
   height: 3rem;
   border-bottom: .2rem solid var(--dividers);
   position: fixed;
-  // top: 0; /* Position the navbar at the bottom of the page */
 }
 
 .side-bar {
@@ -56,8 +52,6 @@ nav {
   top: 3rem;
   right: 0;
   height: 100%;
-  // height: 100vh;
-  // overflowX: hidden;
 }
 
 // The sidebar slide effect is a scale. Activated in JS
@@ -98,17 +92,23 @@ nav {
   justify-content: center;
   align-items: center;
   background: var(--main-app-color);
+  transition: box-shadow ease-in-out .2s; 
 
-    .lines {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px;
-      transition: all 0.3s ease;
-    }
+  .lines {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
 }
 
-.toggle-burger {
+.toggle-burger-inset {
+  box-shadow: inset 0 0 7px #1f1d1d;
+}
+
+
+.toggle-burger-lines {
 
   .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
@@ -123,15 +123,12 @@ nav {
   }
 }
 
-.burger-lines:hover {
-  transform: scale(1.1, 1.1);
-}
 
 ////////////////// SHOWCASE/HEADER //////////////////
 #showcase {
   grid-area: header-area;
   text-align: center;
-  height: 25rem;
+  height: 30rem;
   grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -146,7 +143,6 @@ nav {
     background: var(--header-color);
     border-top: .2em solid rgba(0, 0, 0, .3);
     border-bottom: .2em solid rgba(0, 0, 0, .3);
-    // border-radius: 0 .7rem 1rem 0;
   }
 
   .fill-sides-content-right {
@@ -154,7 +150,6 @@ nav {
     background: var(--header-color);
     border-top: .2em solid rgba(0, 0, 0, .3);
     border-bottom: .2em solid rgba(0, 0, 0, .3);
-    // border-radius: 1rem 0 0 1rem;
   }
 
   .container-showcase-content {
@@ -165,13 +160,12 @@ nav {
   }
 
   .showcase-background-image {
-    height: 25rem;
+    height: 30rem;
     position: absolute;
     background: url('../assets/header-truck-mountains.jpg');
     background-position: 100% 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: .8;
     width: 100%;
     z-index: -1;
   }
@@ -185,89 +179,80 @@ nav {
     border-top: .2em solid rgba(0, 0, 0, .3);
     border-bottom: .2em solid rgba(0, 0, 0, .3);
 
-  
-      h1 {
-        margin-bottom: .5rem;
-        opacity: 1;
-        font-size: 1.5rem;
-      }
+    h1 {
+      margin-bottom: .5rem;
+      opacity: 1;
+      font-size: 1.5rem;
+    }
 
-      i {
-        color: rgb(60, 177, 31)
-      }
+    i {
+      color: rgb(60, 177, 31)
+    }
 
-      p {
+    p {
       font-size: 1.1em;
-
-      }
+    }
   }
 }
 
 
-///////////////////// MAIN //////////////////////
+///////////////////// MAIN START//////////////////////
 main {
+  margin-top: 1.5rem;
   line-height: 1.5;
   grid-area: main-area;
   display: grid;
   grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-  grid-template-rows: 15rem 1fr;
+  grid-template-rows: auto auto;
   grid-template-areas: 
     ". sect-a sect-a ."
     "sect-b sect-b sect-b sect-b";
   text-align: center;
   background: var(--main-app-color);
 
+  // MAIN SECTION-A
   #section-a {
     grid-area: sect-a;
-    // grid-column: 5;
-    display: flex;
-    justify-content: center;
-    align-items: var(--main-app-color);
     color: white;
-    padding: 2rem;
+    padding: 3rem 2rem;
 
     p {
       padding-top: 1.5rem;
     }
   }
-
+// MAIN SECTION-B
   #section-b {
     grid-area: sect-b;
-    background: var(--dividers);
-    // display: flex;
-    // justify-content: center;
+    background: white;
 
     ul {
       list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      // justify-items: center;
-      // align-items: center;
+      margin-top: 1.5rem;
 
-        li {
-          display: flex;
-          justify-content: center; 
-          flex-wrap: wrap; 
-          background: var(--main-app-color);
-          // align-items: center;
+      li {
+        box-shadow: -1px 6px 5px -2px rgba(0,0,0,0.75);
+        display: flex;
+        justify-content: center; 
+        flex-wrap: wrap; 
+        background: var(--main-app-color);
+        margin: 0 1rem 1.5rem 1rem;
+        color: white;
+        border-radius: 20px 20px 15px 15px;
+
+        .card-content {
           padding: 2rem;
-          margin: 1rem;
 
-            img {
-              width: 100%;
-            }
+          p {
+            margin-top: 1rem;
+          }
         }
+
+        img {
+          width: 100%;
+          border-radius: 15px 15px 0 0;
+        }
+      }
     }
-
- 
-
-    // li {
-    //   height: 30rem;
-    // }
-    // img {
-    //   height: 20rem;
-    // }
   }
 }
 
@@ -312,13 +297,14 @@ main {
     background-color: var(--sidebar-color);
     transform-origin: left;
     transform: scaleX(0);
-    transition: transform ease-in-out .4s;
+    transition: transform ease-in-out .2s;
   }
 
   li:hover::before {
     content: '';
     display: block;
     height: 5px;
+    border-radius: 5px;
     background-color: var(--dividers);
     transform: scaleX(1);
   }

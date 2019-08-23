@@ -1,5 +1,7 @@
 const navSlide = () => {
-  const burger = document.querySelector('.burger-lines');
+  const burgerLines = document.querySelector('.burger-lines');
+  const burger = document.querySelector('.burger');
+
   // const nav = document.querySelector('.nav-links');
   const navLinks = document.querySelectorAll('.nav-links li');
   const linksWrapper = document.querySelector('.links-wrapper');
@@ -31,7 +33,8 @@ const navSlide = () => {
     //   }
     // });
     // Burger Animation
-    burger.classList.toggle('toggle-burger')
+    burger.classList.toggle('toggle-burger-inset')
+    burgerLines.classList.toggle('toggle-burger-lines')
   });
   // linksWrapper.style.transition = 'none';
 }

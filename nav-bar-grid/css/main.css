@@ -6,9 +6,9 @@
 }
 
 :root {
-  --main-app-color: rgb(82, 94, 122);
-  --sidebar-color: rgba(82, 94, 122, .9);
-  --header-color: rgba(82, 94, 122, .8);
+  --main-app-color: rgb(39, 61, 134);
+  --sidebar-color: rgba(39, 61, 134, .9);
+  --header-color: rgba(39, 61, 134, .8);
   --dividers: rgb(17, 43, 68);
 }
 
@@ -19,7 +19,7 @@
   height: 100vh;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 3rem 1fr 1fr;
+  grid-auto-rows: 3rem 1fr auto;
       grid-template-areas: "nav-bar     nav-bar     nav-bar     nav-bar" "header-area header-area header-area header-area" "main-area   main-area   main-area   main-area";
 }
 
@@ -31,9 +31,9 @@ nav {
   letter-spacing: 3px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr .2rem 3em;
-      grid-template-columns: 1fr .2rem 3em;
-      grid-template-areas: "logo . burger";
+  -ms-grid-columns: 1fr 3em;
+      grid-template-columns: 1fr 3em;
+      grid-template-areas: "logo burger";
   width: 100%;
   height: 3rem;
   border-bottom: 0.2rem solid var(--dividers);
@@ -118,7 +118,7 @@ nav {
 
 .burger {
   -ms-grid-row: 1;
-  -ms-grid-column: 3;
+  -ms-grid-column: 2;
   grid-area: burger;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -134,6 +134,10 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   background: var(--main-app-color);
+  -webkit-transition: -webkit-box-shadow ease-in-out .2s;
+  transition: -webkit-box-shadow ease-in-out .2s;
+  transition: box-shadow ease-in-out .2s;
+  transition: box-shadow ease-in-out .2s, -webkit-box-shadow ease-in-out .2s;
 }
 
 .burger .lines {
@@ -145,23 +149,23 @@ nav {
   transition: all 0.3s ease;
 }
 
-.toggle-burger .line1 {
+.toggle-burger-inset {
+  -webkit-box-shadow: inset 0 0 7px #1f1d1d;
+          box-shadow: inset 0 0 7px #1f1d1d;
+}
+
+.toggle-burger-lines .line1 {
   -webkit-transform: rotate(-45deg) translate(-5px, 6px);
           transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-.toggle-burger .line2 {
+.toggle-burger-lines .line2 {
   opacity: 0;
 }
 
-.toggle-burger .line3 {
+.toggle-burger-lines .line3 {
   -webkit-transform: rotate(45deg) translate(-5px, -6px);
           transform: rotate(45deg) translate(-5px, -6px);
-}
-
-.burger-lines:hover {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
 }
 
 #showcase {
@@ -170,7 +174,7 @@ nav {
   -ms-grid-column-span: 4;
   grid-area: header-area;
   text-align: center;
-  height: 25rem;
+  height: 30rem;
   -ms-grid-columns: 1fr (minmax(auto, 25em))[2] 1fr;
       grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
   display: -ms-grid;
@@ -217,13 +221,12 @@ nav {
 }
 
 #showcase .showcase-background-image {
-  height: 25rem;
+  height: 30rem;
   position: absolute;
   background: url("../assets/header-truck-mountains.jpg");
   background-position: 100% 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: .8;
   width: 100%;
   z-index: -1;
 }
@@ -253,6 +256,7 @@ nav {
 }
 
 main {
+  margin-top: 1.5rem;
   line-height: 1.5;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -262,8 +266,8 @@ main {
   display: grid;
   -ms-grid-columns: 1fr (minmax(auto, 25em))[2] 1fr;
       grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-  -ms-grid-rows: 15rem 1fr;
-      grid-template-rows: 15rem 1fr;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
       grid-template-areas: ". sect-a sect-a ." "sect-b sect-b sect-b sect-b";
   text-align: center;
   background: var(--main-app-color);
@@ -274,17 +278,8 @@ main #section-a {
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: sect-a;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: var(--main-app-color);
-      -ms-flex-align: var(--main-app-color);
-          align-items: var(--main-app-color);
   color: white;
-  padding: 2rem;
+  padding: 3rem 2rem;
 }
 
 main #section-a p {
@@ -296,22 +291,17 @@ main #section-b {
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: sect-b;
-  background: var(--dividers);
+  background: white;
 }
 
 main #section-b ul {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  margin-top: 1.5rem;
 }
 
 main #section-b ul li {
+  -webkit-box-shadow: -1px 6px 5px -2px rgba(0, 0, 0, 0.75);
+          box-shadow: -1px 6px 5px -2px rgba(0, 0, 0, 0.75);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -321,12 +311,22 @@ main #section-b ul li {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background: var(--main-app-color);
+  margin: 0 1rem 1.5rem 1rem;
+  color: white;
+  border-radius: 20px 20px 15px 15px;
+}
+
+main #section-b ul li .card-content {
   padding: 2rem;
-  margin: 1rem;
+}
+
+main #section-b ul li .card-content p {
+  margin-top: 1rem;
 }
 
 main #section-b ul li img {
   width: 100%;
+  border-radius: 15px 15px 0 0;
 }
 
 .links-wrapper {
@@ -375,16 +375,17 @@ main #section-b ul li img {
           transform-origin: left;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transition: -webkit-transform ease-in-out .4s;
-  transition: -webkit-transform ease-in-out .4s;
-  transition: transform ease-in-out .4s;
-  transition: transform ease-in-out .4s, -webkit-transform ease-in-out .4s;
+  -webkit-transition: -webkit-transform ease-in-out .2s;
+  transition: -webkit-transform ease-in-out .2s;
+  transition: transform ease-in-out .2s;
+  transition: transform ease-in-out .2s, -webkit-transform ease-in-out .2s;
 }
 
 .nav-links li:hover::before {
   content: '';
   display: block;
   height: 5px;
+  border-radius: 5px;
   background-color: var(--dividers);
   -webkit-transform: scaleX(1);
           transform: scaleX(1);

@@ -17,41 +17,42 @@
 .grid {
   font-family: Arial, Helvetica, sans-serif;
   display: grid;
-  height: 100vh;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 3rem 1fr auto;
+  // grid-template-rows: 3rem 1fr auto;
   grid-template-areas: 
-    "nav-bar     nav-bar     nav-bar     nav-bar"
+    // "nav-bar     nav-bar     nav-bar     nav-bar"
     "header-area header-area header-area header-area"
     "main-area   main-area   main-area   main-area";
+  background-color: rgb(17, 43, 68);
 }
 
 nav {
   grid-area: nav-bar;
-  letter-spacing: 3px;
   display: grid;
   grid-template-columns: 1fr 3em;
   grid-template-areas: "logo burger";
+  position: fixed;
+  z-index: 2;
   width: 100%;
   height: 3rem;
+  letter-spacing: 3px;
   border-bottom: .2rem solid var(--dividers);
-  position: fixed;
 }
 
 .side-bar {
-  grid-row: 2/ auto-fill;
-  grid-column: 3/5;
-  background: var(--sidebar-color);
-  z-index: 1;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform .3s ease-in;
-  border-left: .2rem solid var(--dividers);
   position: fixed;
+  z-index: 2;
   width: 50%;
   top: 3rem;
   right: 0;
   height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .3s ease-in;
+  border-left: .2rem solid var(--dividers);
+  background: var(--sidebar-color);
+  // grid-row: 2/ auto-fill;
+  // grid-column: 3/5;
 }
 
 // The sidebar slide effect is a scale. Activated in JS
@@ -72,12 +73,13 @@ nav {
 }
 
 .logo {
-  color: white;
   grid-area: logo;
   display: flex;
   justify-content: center;
   align-items: center;
+
   text-transform: uppercase;
+  color: white;
   background: var(--main-app-color);
 }
 
@@ -91,6 +93,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   background: var(--main-app-color);
   transition: box-shadow ease-in-out .2s; 
 
@@ -106,7 +109,6 @@ nav {
 .toggle-burger-inset {
   box-shadow: inset 0 0 7px #1f1d1d;
 }
-
 
 .toggle-burger-lines {
 
@@ -127,19 +129,20 @@ nav {
 ////////////////// SHOWCASE/HEADER //////////////////
 #showcase {
   grid-area: header-area;
-  text-align: center;
-  height: 30rem;
-  grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
   display: grid;
+  grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: 
-  "showcase-divider showcase-divider showcase-divider showcase-divider"
-  "fill-left container-showcase container-showcase fill-right"
-  ". . . .";
+  ". . . ."
+  "fill-left container-showcase container-showcase fill-right";
+  text-align: center;
+  margin-top: 3rem;
+  height: 30rem;
   line-height: 1.5;
 
   .fill-sides-content-left {
     grid-area: fill-left;
+    z-index: 1;
     background: var(--header-color);
     border-top: .2em solid rgba(0, 0, 0, .3);
     border-bottom: .2em solid rgba(0, 0, 0, .3);
@@ -147,6 +150,7 @@ nav {
 
   .fill-sides-content-right {
     grid-area: fill-right;
+    z-index: 1;
     background: var(--header-color);
     border-top: .2em solid rgba(0, 0, 0, .3);
     border-bottom: .2em solid rgba(0, 0, 0, .3);
@@ -167,7 +171,7 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    z-index: -1;
+    // z-index: -1;
   }
 
   .showcase-content {
@@ -178,6 +182,7 @@ nav {
     height: 100%;
     border-top: .2em solid rgba(0, 0, 0, .3);
     border-bottom: .2em solid rgba(0, 0, 0, .3);
+    z-index: 1;
 
     h1 {
       margin-bottom: .5rem;
@@ -198,20 +203,19 @@ nav {
 
 ///////////////////// MAIN START//////////////////////
 main {
-  margin-top: .5rem;
-  line-height: 1.5;
   grid-area: main-area;
   display: grid;
   grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-  grid-template-rows: auto auto auto;
+  // grid-template-rows: auto auto auto;
   grid-template-areas: 
     ".      sect-a sect-a ."
     "sect-b sect-b sect-b sect-b";
-    // "sect-b sect-b sect-b sect-b";
+  margin-top: .5rem;
+  line-height: 1.5;
   text-align: center;
   background: var(--main-app-color);
 
-  // MAIN SECTION-A
+// MAIN SECTION-A
   #section-a {
     grid-area: sect-a;
     color: white;
@@ -221,33 +225,29 @@ main {
       padding-top: 1.5rem;
     }
   }
+
 // MAIN SECTION-B
   #section-b {
     grid-area: sect-b;
-    background: white;
+    background: rgb(17, 43, 68);
 
     ul {
-      list-style: none;
-      margin-top: 1.5rem;
       display: grid;
       grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
       grid-template-areas: 
-        "card1 card1 card1"
-        "card2 card2 card2"
-        "card3 card3 card3";
-        
-      // display: flex; 
-      // align-items: space-between; 
-      // flex-wrap: wrap;
-      // align-content: stretch;
+        "card1 card1 card1 card1"
+        "card2 card2 card2 card2"
+        "card3 card3 card3 card3";
+      margin-top: 1.5rem;
+      list-style: none;
 
       li {
-        box-shadow: -1px 6px 5px -2px rgba(0,0,0,0.75);
         display: flex;
         justify-content: center; 
         flex-wrap: wrap; 
-        background: var(--main-app-color);
         margin: 0 1rem 1.5rem 1rem;
+        box-shadow: -1px 6px 5px -2px rgba(0,0,0,0.75);
+        background: var(--main-app-color);
         color: white;
         border-radius: 20px 20px 15px 15px;
 
@@ -274,16 +274,17 @@ main {
       li:nth-child(3) {
         grid-area: card3;
       }
-
     }
   }
 }
 
 
 
-  @media screen and (min-width: 768px ) and (max-width: 1024px) {
+  @media screen and (min-width: 650px ) and (max-width: 1024px) {
     main {
+
       #section-b {
+
         ul {
           grid-template-areas: 
           "card1 card1 card2 card2"
@@ -291,9 +292,18 @@ main {
   
           li:nth-child(3) {
             grid-area: card3;
+
             img {
-              height: 20rem;
-              border-radius: 15px 15px 0 0;
+              width: 50%;
+              border-radius: 15px 0 0 15px;
+            }
+
+            .card-content {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              width: 50%;
             }
           }
         }

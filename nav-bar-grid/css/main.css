@@ -426,27 +426,23 @@ main #section-b ul li:nth-child(3) {
 }
 
 .nav-links li::before {
-  margin-bottom: .5rem;
-  content: '';
   display: block;
+  margin-bottom: .5rem;
   height: 5px;
-  background-color: var(--sidebar-color);
+  content: '';
+  background-color: var(--dividers);
   -webkit-transform-origin: left;
           transform-origin: left;
+  border-radius: 5px;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transition: -webkit-transform ease-in-out .2s;
-  transition: -webkit-transform ease-in-out .2s;
-  transition: transform ease-in-out .2s;
-  transition: transform ease-in-out .2s, -webkit-transform ease-in-out .2s;
+  -webkit-transition: -webkit-transform ease-out .2s;
+  transition: -webkit-transform ease-out .2s;
+  transition: transform ease-out .2s;
+  transition: transform ease-out .2s, -webkit-transform ease-out .2s;
 }
 
 .nav-links li:hover::before {
-  content: '';
-  display: block;
-  height: 5px;
-  border-radius: 5px;
-  background-color: var(--dividers);
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }

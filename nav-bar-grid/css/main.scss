@@ -315,14 +315,47 @@ main {
     main {
       #section-b {
         ul {
-          grid-template-columns: 1fr repeat(3, minmax(auto, 25em)) 1fr;
+          grid-template-columns: 1fr repeat(3, minmax(auto, 40em)) 1fr;
           grid-template-areas: 
           ". card1 card2 card3 .";
+
+          li {
+            // height: 80%;
+          }
+
+          img {
+            // height: 60%;
+            // padding: 0;
+          }
+
+          // .card-content {
+          //   height: 40%;
+          // }
         }
       }
     }
   }
 
+  @media screen and (min-width: 1500px) {
+    #section-b {
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        li {
+          // width: 80%;
+          // margin: 0;
+        }
+      }
+
+      li img {
+        height: 20rem;
+      }
+
+
+    }
+  }
 
 
 

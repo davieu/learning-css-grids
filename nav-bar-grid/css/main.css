@@ -383,9 +383,26 @@ main #section-b ul li:nth-child(3) {
 
 @media screen and (min-width: 1025px) {
   main #section-b ul {
-    -ms-grid-columns: 1fr (minmax(auto, 25em))[3] 1fr;
-        grid-template-columns: 1fr repeat(3, minmax(auto, 25em)) 1fr;
+    -ms-grid-columns: 1fr (minmax(auto, 40em))[3] 1fr;
+        grid-template-columns: 1fr repeat(3, minmax(auto, 40em)) 1fr;
         grid-template-areas: ". card1 card2 card3 .";
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  #section-b ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #section-b li img {
+    height: 20rem;
   }
 }
 

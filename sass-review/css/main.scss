@@ -1,0 +1,8 @@
+//Import variables from _varibales.scss
+@import "./variables";
+//Import header file from _header.scss
+@import "./header";
+
+.contact button {
+  background: $primaryBtn;
+}

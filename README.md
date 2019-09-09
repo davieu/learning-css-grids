@@ -1,4 +1,13 @@
-https://www.youtube.com/watch?v=M3qBpPw77qo
+
+SASS https://www.youtube.com/watch?v=Zz6eOVaaelI
+variables: $headerColor: red;
+add hover and pseudo elements faster with &: or &::
+&:hover {background: red}
+&::after {content: "yo"}
+import scss files to make the scss cleaner and easier to read
+file must have an underscore. _header.scss then import in the main scss file as---  @import "./header"
+
+GRID/FLEX https://www.youtube.com/watch?v=M3qBpPw77qo
 
 This is my frontend git repo. It is me just practicing with design and figuring out cool implementations of anything that I want to lean.
 

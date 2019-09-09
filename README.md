@@ -7,6 +7,21 @@ add hover and pseudo elements faster with &: or &::
 import scss files to make the scss cleaner and easier to read
 file must have an underscore. _header.scss then import in the main scss file as---  @import "./header"
 
+this is an scss MIXIN. Basically a function. Has to paramaters.
+@mixin flexCenter($direction, $background) {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  background: $background;
+}
+
+@include <MIXIN name> is how you use the MIXIN. Arguments are column, and blue. flex-direction: column, and background: blue
+.contact {
+  @include flexCenter(column, blue);
+}
+
 GRID/FLEX https://www.youtube.com/watch?v=M3qBpPw77qo
 
 This is my frontend git repo. It is me just practicing with design and figuring out cool implementations of anything that I want to lean.

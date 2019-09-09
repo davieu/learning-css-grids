@@ -3,6 +3,21 @@
 //Import header file from _header.scss
 @import "./header";
 
-.contact button {
-  background: $primaryBtn;
+.contact {
+  @include flexCenter(column, blue);
+
+  button {
+    background: $primaryBtn;
+  }
+}
+
+section:nth-child(2) {
+  .contact {
+    //@extend gets all the style properties from the header
+    @extend header;
+    // override by adding new styles
+    color: rgb(212, 128, 128);
+    //calculations also work
+    width: 100% - 80%; //width of 20%
+  }
 }

@@ -419,17 +419,7 @@ main #section-b ul li:nth-child(3) {
 }
 
 .nav-links li {
-  text-decoration: none;
   opacity: 0;
-}
-
-.nav-links li:hover {
-  font-weight: bold;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
 }
 
 .nav-links li::before {
@@ -454,38 +444,57 @@ main #section-b ul li:nth-child(3) {
           transform: scaleX(1);
 }
 
+nav li,
+.nav-links li {
+  text-decoration: none;
+}
+
+nav li:hover,
+.nav-links li:hover {
+  font-weight: bold;
+}
+
+nav a,
+.nav-links a {
+  text-decoration: none;
+  color: white;
+}
+
 @media screen and (min-width: 1300px) {
+  .side-bar {
+    display: none;
+  }
   .burger {
     display: none;
   }
   nav {
-    grid-area: nav-test;
+    grid-area: nav-bar;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 2fr 50em 1fr;
         grid-template-columns: 2fr 50em 1fr;
-        grid-template-areas: 'bog test';
+        grid-template-areas: 'logo desktopLinks';
     width: 100%;
-    letter-spacing: 3px;
     background: var(--main-app-color);
+    height: 4rem;
   }
   .logo {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-    grid-area: bog;
+    grid-area: logo;
   }
   .nav-links-desktop {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
-    grid-area: test;
+    grid-area: desktopLinks;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
     background: var(--main-app-color);
   }
   .nav-links-desktop li {
-    width: 100%;
+    margin-bottom: 8px;
+    width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -496,20 +505,25 @@ main #section-b ul li:nth-child(3) {
         -ms-flex-align: center;
             align-items: center;
   }
-  .nav-links-desktop li a {
-    text-decoration: none;
-    color: white;
+  .nav-links-desktop .tops {
+    display: block;
+    margin-bottom: 0.5rem;
+    height: 5px;
+    content: '';
+    background-color: var(--dividers);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    border-radius: 5px;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition: -webkit-transform ease-out 0.2s;
+    transition: -webkit-transform ease-out 0.2s;
+    transition: transform ease-out 0.2s;
+    transition: transform ease-out 0.2s, -webkit-transform ease-out 0.2s;
   }
-  #section-b ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+  .nav-links-desktop li:hover .tops {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 /*# sourceMappingURL=main.css.map */

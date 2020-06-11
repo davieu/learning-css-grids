@@ -7,8 +7,8 @@
 // CUSTUM VARIABLES
 :root {
   --main-app-color: rgb(39, 61, 134);
-  --sidebar-color: rgba(39, 61, 134, .9);
-  --header-color: rgba(39, 61, 134, .8);
+  --sidebar-color: rgba(39, 61, 134, 0.9);
+  --header-color: rgba(39, 61, 134, 0.8);
   --dividers: rgb(17, 43, 68);
 }
 
@@ -21,8 +21,8 @@
   // grid-template-rows: 3rem 1fr auto;
   grid-template-areas: 
     // "nav-bar     nav-bar     nav-bar     nav-bar"
-    "header-area header-area header-area header-area"
-    "main-area   main-area   main-area   main-area";
+    'header-area header-area header-area header-area'
+    'main-area   main-area   main-area   main-area';
   background-color: rgb(17, 43, 68);
 }
 
@@ -30,13 +30,13 @@ nav {
   grid-area: nav-bar;
   display: grid;
   grid-template-columns: 1fr 3em;
-  grid-template-areas: "logo burger";
+  grid-template-areas: 'logo burger';
   position: fixed;
   z-index: 2;
   width: 100%;
   height: 3rem;
   letter-spacing: 3px;
-  border-bottom: .2rem solid var(--dividers);
+  border-bottom: 0.2rem solid var(--dividers);
 }
 
 .side-bar {
@@ -48,8 +48,8 @@ nav {
   height: 100%;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform .3s ease-in;
-  border-left: .2rem solid var(--dividers);
+  transition: transform 0.3s ease-in;
+  border-left: 0.2rem solid var(--dividers);
   background: var(--sidebar-color);
   // grid-row: 2/ auto-fill;
   // grid-column: 3/5;
@@ -57,7 +57,7 @@ nav {
 
 // The sidebar slide effect is a scale. Activated in JS
 .side-bar-active {
-  transform: scaleX(1)
+  transform: scaleX(1);
 }
 
 // Animation for the links to slide
@@ -68,7 +68,7 @@ nav {
   }
   to {
     opacity: 1;
-    transform: translateX(0px); 
+    transform: translateX(0px);
   }
 }
 
@@ -95,7 +95,7 @@ nav {
   align-items: center;
 
   background: var(--main-app-color);
-  transition: box-shadow ease-in-out .2s; 
+  transition: box-shadow ease-in-out 0.2s;
 
   .lines {
     width: 25px;
@@ -111,7 +111,6 @@ nav {
 }
 
 .toggle-burger-lines {
-
   .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
@@ -125,16 +124,15 @@ nav {
   }
 }
 
-
 ////////////////// SHOWCASE/HEADER //////////////////
 #showcase {
   grid-area: header-area;
   display: grid;
   grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: 
-  ". . . ."
-  "fill-left container-showcase container-showcase fill-right";
+  grid-template-areas:
+    '. . . .'
+    'fill-left container-showcase container-showcase fill-right';
   text-align: center;
   margin-top: 3rem;
   height: 30rem;
@@ -144,16 +142,16 @@ nav {
     grid-area: fill-left;
     z-index: 1;
     background: var(--header-color);
-    border-top: .2em solid rgba(0, 0, 0, .3);
-    border-bottom: .2em solid rgba(0, 0, 0, .3);
+    border-top: 0.2em solid rgba(0, 0, 0, 0.3);
+    border-bottom: 0.2em solid rgba(0, 0, 0, 0.3);
   }
 
   .fill-sides-content-right {
     grid-area: fill-right;
     z-index: 1;
     background: var(--header-color);
-    border-top: .2em solid rgba(0, 0, 0, .3);
-    border-bottom: .2em solid rgba(0, 0, 0, .3);
+    border-top: 0.2em solid rgba(0, 0, 0, 0.3);
+    border-bottom: 0.2em solid rgba(0, 0, 0, 0.3);
   }
 
   .container-showcase-content {
@@ -180,18 +178,18 @@ nav {
     padding: 1.5rem 2rem 1.5rem 2rem;
     width: 100%;
     height: 100%;
-    border-top: .2em solid rgba(0, 0, 0, .3);
-    border-bottom: .2em solid rgba(0, 0, 0, .3);
+    border-top: 0.2em solid rgba(0, 0, 0, 0.3);
+    border-bottom: 0.2em solid rgba(0, 0, 0, 0.3);
     z-index: 1;
 
     h1 {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       opacity: 1;
       font-size: 1.5rem;
     }
 
     i {
-      color: rgb(60, 177, 31)
+      color: rgb(60, 177, 31);
     }
 
     p {
@@ -200,22 +198,21 @@ nav {
   }
 }
 
-
 ///////////////////// MAIN START//////////////////////
 main {
   grid-area: main-area;
   display: grid;
   grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
   // grid-template-rows: auto auto auto;
-  grid-template-areas: 
-    ".      sect-a sect-a ."
-    "sect-b sect-b sect-b sect-b";
-  margin-top: .5rem;
+  grid-template-areas:
+    '.      sect-a sect-a .'
+    'sect-b sect-b sect-b sect-b';
+  margin-top: 0.5rem;
   line-height: 1.5;
   text-align: center;
   background: var(--main-app-color);
 
-// MAIN SECTION-A
+  // MAIN SECTION-A
   #section-a {
     grid-area: sect-a;
     color: white;
@@ -226,7 +223,7 @@ main {
     }
   }
 
-// MAIN SECTION-B
+  // MAIN SECTION-B
   #section-b {
     grid-area: sect-b;
     background: rgb(17, 43, 68);
@@ -234,19 +231,19 @@ main {
     ul {
       display: grid;
       grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-      grid-template-areas: 
-        "card1 card1 card1 card1"
-        "card2 card2 card2 card2"
-        "card3 card3 card3 card3";
+      grid-template-areas:
+        'card1 card1 card1 card1'
+        'card2 card2 card2 card2'
+        'card3 card3 card3 card3';
       margin-top: 1.5rem;
       list-style: none;
 
       li {
         display: flex;
-        justify-content: center; 
-        flex-wrap: wrap; 
+        justify-content: center;
+        flex-wrap: wrap;
         margin: 0 1rem 1.5rem 1rem;
-        box-shadow: -1px 6px 5px -2px rgba(0,0,0,0.75);
+        box-shadow: -1px 6px 5px -2px rgba(0, 0, 0, 0.75);
         background: var(--main-app-color);
         color: white;
         border-radius: 20px 20px 15px 15px;
@@ -278,91 +275,66 @@ main {
   }
 }
 
-
-
-  @media screen and (min-width: 650px ) and (max-width: 1024px) {
-    main {
-
-      #section-b {
-
-        ul {
-          grid-template-areas: 
-          "card1 card1 card2 card2"
-          "card3 card3 card3 card3";
-  
-          li:nth-child(3) {
-            grid-area: card3;
-
-            img {
-              width: 50%;
-              border-radius: 15px 0 0 15px;
-            }
-
-            .card-content {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              width: 50%;
-            }
-          }
-        }
-      }
-    }
+@media screen and (min-width: 650px) and (max-width: 1024px) {
+  .nav-links-desktop {
+    display: none;
   }
-
-  @media screen and (min-width: 1025px) {
-    main {
-      #section-b {
-        ul {
-          grid-template-columns: 1fr repeat(3, minmax(auto, 40em)) 1fr;
-          grid-template-areas: 
-          ". card1 card2 card3 .";
-
-          li {
-            // height: 80%;
-          }
-
-          img {
-            // height: 60%;
-            // padding: 0;
-          }
-
-          // .card-content {
-          //   height: 40%;
-          // }
-        }
-      }
-    }
-  }
-
-  @media screen and (min-width: 1500px) {
+  main {
     #section-b {
       ul {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
+        grid-template-areas:
+          'card1 card1 card2 card2'
+          'card3 card3 card3 card3';
 
-        li {
-          // width: 80%;
-          // margin: 0;
+        li:nth-child(3) {
+          grid-area: card3;
+
+          img {
+            width: 50%;
+            border-radius: 15px 0 0 15px;
+          }
+
+          .card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+          }
         }
       }
-
-      li img {
-        height: 20rem;
-      }
-
-
     }
   }
+}
 
+@media screen and (min-width: 1025px) {
+  main {
+    #section-b {
+      ul {
+        grid-template-columns: 1fr repeat(3, minmax(auto, 30em)) 1fr;
+        grid-template-areas: '. card1 card2 card3 .';
 
+        li {
+          // height: 80%;
+        }
 
+        img {
+          // height: 60%;
+          // padding: 0;
+        }
 
-
+        // .card-content {
+        //   height: 40%;
+        // }
+      }
+    }
+  }
+}
 
 //////////////////// DESKTOP //////////////////
+.nav-links-desktop {
+  display: none;
+}
 .links-wrapper {
   height: 50%;
 }
@@ -374,7 +346,7 @@ main {
   justify-content: space-around;
   align-items: center;
   color: white;
-  
+
   li {
     text-decoration: none;
     opacity: 0;
@@ -391,14 +363,14 @@ main {
 
   li::before {
     display: block;
-    margin-bottom:.5rem;
+    margin-bottom: 0.5rem;
     height: 5px;
     content: '';
     background-color: var(--dividers);
     transform-origin: left;
     border-radius: 5px;
     transform: scaleX(0);
-    transition: transform ease-out .2s;
+    transition: transform ease-out 0.2s;
   }
 
   li:hover::before {
@@ -406,5 +378,70 @@ main {
   }
 }
 
+@media screen and (min-width: 1300px) {
+  .burger {
+    display: none;
+  }
 
+  nav {
+    grid-area: nav-test;
+    display: grid;
+    grid-template-columns: 2fr 50em 1fr;
+    grid-template-areas: 'bog test';
+    // position: fixed;
+    // z-index: 2;
+    width: 100%;
+    // height: 3rem;
+    letter-spacing: 3px;
+    background: var(--main-app-color);
+    // border-bottom: 0.2rem solid var(--dividers);
+  }
 
+  .logo {
+    grid-area: bog;
+    // display: flex;
+    // justify-content: left;
+    // align-items: center;
+
+    // text-transform: uppercase;
+    // color: white;
+    // background: var(--main-app-color);
+  }
+  .nav-links-desktop {
+    grid-area: test;
+    display: flex;
+    width: 100%;
+    background: var(--main-app-color);
+    // list-style: none;
+    li {
+      // text-decoration: none;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      // color: white;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      // flex-wrap: wrap;
+    }
+  }
+  #section-b {
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      li {
+        // width: 80%;
+        // margin: 0;
+      }
+    }
+
+    li img {
+      // height: 20rem;
+    }
+  }
+}

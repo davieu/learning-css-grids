@@ -207,7 +207,8 @@ main {
   grid-template-areas:
     '.      sect-a sect-a .'
     'sect-b sect-b sect-b sect-b'
-    '.      sect-c sect-c .';
+    '.      sect-c sect-c .'
+    'sect-d sect-d sect-d sect-d';
   margin-top: 0.5rem;
   line-height: 1.5;
   text-align: center;
@@ -230,6 +231,7 @@ main {
     background: rgb(17, 43, 68);
 
     ul {
+      padding-top: 1em;
       display: grid;
       grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
       grid-template-areas:
@@ -277,18 +279,62 @@ main {
 
   // Section-C
   #section-c {
+    // padding-top: 5em;
     grid-area: sect-c;
     color: black;
     padding: 3rem 2rem;
     background-color: white;
-    border: 15px solid rgb(17, 43, 68);
+    border: 15px solid var(--dividers);
 
     p {
       padding-top: 1.5rem;
     }
   }
+  // SECTION-D
+  #section-d {
+    padding-top: 1em;
+    grid-area: sect-d;
+    color: black;
+    background-color: var(--dividers);
+
+    .content-wrap {
+      margin-top: 0.5em;
+      // margin-bottom: 2em;
+    }
+
+    .test {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'box1'
+        'box2';
+      color: white;
+    }
+
+    .box {
+      padding: 2rem 2rem;
+      grid-area: box1;
+      background-color: #333;
+      height: 16em;
+      border-top: 5px solid var(--main-app-color);
+      p {
+        padding-top: 1.5rem;
+      }
+    }
+    .box2 {
+      padding: 2rem 2rem;
+      grid-area: box2;
+      background-color: #333;
+      height: 16em;
+      border-top: 5px solid var(--main-app-color);
+      p {
+        padding-top: 1.5rem;
+      }
+    }
+  }
 }
 
+// TABLET
 @media screen and (min-width: 650px) and (max-width: 1024px) {
   .nav-links-desktop {
     display: none;
@@ -318,15 +364,18 @@ main {
         }
       }
     }
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  main {
-    #section-b {
-      ul {
-        grid-template-columns: 1fr repeat(3, minmax(auto, 30em)) 1fr;
-        grid-template-areas: '. card1 card2 card3 .';
+    #section-d {
+      .test {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'box1 box2';
+      }
+      .box {
+        height: 17.8em;
+        border-right: 2px solid var(--main-app-color);
+      }
+      .box2 {
+        height: 17.8em;
+        border-left: 2px solid var(--main-app-color);
       }
     }
   }
@@ -386,8 +435,33 @@ nav,
 }
 
 //////////////////// DESKTOP //////////////////
-
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1025px) {
+  main {
+    #section-b {
+      ul {
+        grid-template-columns: 1fr repeat(3, minmax(auto, 30em)) 1fr;
+        grid-template-areas: '. card1 card2 card3 .';
+      }
+    }
+    #section-d {
+      .test {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'box1 box2';
+      }
+      .box {
+        height: 17em;
+        padding-right: 6rem;
+        padding-left: 6rem;
+        border-right: 2px solid var(--main-app-color);
+      }
+      .box2 {
+        height: 17em;
+        padding-right: 6rem;
+        padding-left: 6rem;
+        border-left: 2px solid var(--main-app-color);
+      }
+    }
+  }
   .side-bar {
     display: none;
   }
@@ -434,6 +508,33 @@ nav,
 
     li:hover .tops {
       transform: scaleX(1);
+    }
+  }
+}
+
+@media screen and (min-width: 1981px) {
+  main {
+    // #section-b {
+    //   ul {
+    //     grid-template-columns: 1fr repeat(3, minmax(auto, 30em)) 1fr;
+    //     grid-template-areas: '. card1 card2 card3 .';
+    //   }
+    // }
+    #section-d {
+      // .test {
+      //   grid-template-columns: 1fr 1fr;
+      //   grid-template-areas: 'box1 box2';
+      // }
+      .box {
+        padding-right: 15rem;
+        padding-left: 15rem;
+        height: 15em;
+      }
+      .box2 {
+        padding-right: 15rem;
+        padding-left: 15rem;
+        height: 15em;
+      }
     }
   }
 }

@@ -16,7 +16,9 @@ img {
   height: auto;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   padding: 1em 0;
 }
@@ -33,7 +35,7 @@ p {
   text-decoration: none;
   padding: 1em 2em;
   border: 1px solid #666;
-  margin: .5em 0;
+  margin: 0.5em 0;
 }
 
 .btn:hover {
@@ -43,7 +45,7 @@ p {
 
 #showcase {
   min-height: 450px;
-  color:#fff;
+  color: #fff;
   text-align: center;
 }
 
@@ -110,7 +112,7 @@ p {
   color: #fff;
 }
 
-#section-d .box:first-child{
+#section-d .box:first-child {
   background: #2690d4;
 }
 
@@ -127,7 +129,7 @@ p {
   text-decoration: none;
 }
 
-@media(min-width: 700px) {
+@media (min-width: 700px) {
   .grid {
     display: grid;
     /* minmax auto is the default. If it is smaller than auto then use size 25em. Middle 2 will be size 25em each*/
@@ -143,7 +145,7 @@ p {
     padding-top: 0;
   }
 
-  .content-wrap, 
+  .content-wrap,
   #section-b ul {
     grid-column: 2/4;
   }
@@ -152,8 +154,8 @@ p {
     grid-column: span 2;
   }
   #main-footer div {
-    padding-top: .2em;
-    grid-column: 2/4
+    padding-top: 0.2em;
+    grid-column: 2/4;
   }
 
   #section-b ul {

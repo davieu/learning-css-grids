@@ -481,6 +481,7 @@ nav,
 
   .logo {
     grid-area: logo;
+    padding-left: 1em;
   }
   .nav-links-desktop {
     grid-area: desktopLinks;
@@ -490,7 +491,7 @@ nav,
       margin-bottom: 8px;
       width: 50%;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
     }
 
@@ -514,17 +515,7 @@ nav,
 
 @media screen and (min-width: 1981px) {
   main {
-    // #section-b {
-    //   ul {
-    //     grid-template-columns: 1fr repeat(3, minmax(auto, 30em)) 1fr;
-    //     grid-template-areas: '. card1 card2 card3 .';
-    //   }
-    // }
     #section-d {
-      // .test {
-      //   grid-template-columns: 1fr 1fr;
-      //   grid-template-areas: 'box1 box2';
-      // }
       .box {
         padding-right: 15rem;
         padding-left: 15rem;

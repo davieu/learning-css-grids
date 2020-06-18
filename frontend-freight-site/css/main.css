@@ -576,6 +576,7 @@ nav a,
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: logo;
+    padding-left: 1em;
   }
   .nav-links-desktop {
     -ms-grid-row: 1;
@@ -592,9 +593,8 @@ nav a,
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;

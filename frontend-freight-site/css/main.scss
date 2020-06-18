@@ -37,6 +37,12 @@ nav {
   height: 3rem;
   letter-spacing: 3px;
   border-bottom: 0.2rem solid var(--dividers);
+
+  img {
+    height: 2.5em;
+    width: 2.5em;
+    margin-right: 0.5em;
+  }
 }
 
 .side-bar {

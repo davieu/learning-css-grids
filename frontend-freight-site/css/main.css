@@ -260,7 +260,7 @@ main {
   display: grid;
   -ms-grid-columns: 1fr (minmax(auto, 25em))[2] 1fr;
       grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-      grid-template-areas: '.      sect-a sect-a .' 'sect-b sect-b sect-b sect-b';
+      grid-template-areas: '.      sect-a sect-a .' 'sect-b sect-b sect-b sect-b' '.      sect-c sect-c .';
   margin-top: 0.5rem;
   line-height: 1.5;
   text-align: center;
@@ -347,6 +347,21 @@ main #section-b ul li:nth-child(3) {
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: card3;
+}
+
+main #section-c {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: sect-c;
+  color: black;
+  padding: 3rem 2rem;
+  background-color: white;
+  border: 15px solid #112b44;
+}
+
+main #section-c p {
+  padding-top: 1.5rem;
 }
 
 @media screen and (min-width: 650px) and (max-width: 1024px) {

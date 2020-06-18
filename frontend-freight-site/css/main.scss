@@ -206,7 +206,8 @@ main {
   // grid-template-rows: auto auto auto;
   grid-template-areas:
     '.      sect-a sect-a .'
-    'sect-b sect-b sect-b sect-b';
+    'sect-b sect-b sect-b sect-b'
+    '.      sect-c sect-c .';
   margin-top: 0.5rem;
   line-height: 1.5;
   text-align: center;
@@ -271,6 +272,19 @@ main {
       li:nth-child(3) {
         grid-area: card3;
       }
+    }
+  }
+
+  // Section-C
+  #section-c {
+    grid-area: sect-c;
+    color: black;
+    padding: 3rem 2rem;
+    background-color: white;
+    border: 15px solid rgb(17, 43, 68);
+
+    p {
+      padding-top: 1.5rem;
     }
   }
 }
